@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Snake Classifier</title>
+        <link rel='stylesheet' type="text/css" href='style.css'>
+    </head>
+    <body>
+
+            <!-- Headings -->
+        <h1>Snake Classifier</h1>
+
+        <!-- Paragraph -->
+        <p>
+            Texas is home to the highest number of species of snakes in all the United States, with a grand total of 115 species.
+            Fortunately, there are only 15% of Texas Snake are venomous. Most people are scared of snakes, and they don't know how to identify snakes.
+            People can get scared over harmless water snakes. This fear can be eliminated by learning to identify snakes!
+            This machine learning model was trained to identify
+            <b>  two kinds of snakes!</b>.
+        </p>
+
+        <!-- Lists -->
+
+            <li>non venomous western water snake</li>
+            <li>venomous Diamondback rattle snake</li>
+
+        <p>
+            Upload the picture of the snake to find out if it's a harmless water snake or a venomous rattle snake!
+        </p>
+
+        <form method = POST enctype = multipart/form-data>
+            <input type=file name=image>
+            <input type=submit value=Predict>
+            <br>
+            {% if uploaded_img %}
+                <h3>Prediction: {{prediction}} </h3>
+                <img src= "static\{{ uploaded_img }}" width ='256' height="256">
+            {%endif%}
+
+        </form>
+
+
+    </body>
+</html>
